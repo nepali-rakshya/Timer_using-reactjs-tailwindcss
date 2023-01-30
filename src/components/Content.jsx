@@ -22,7 +22,7 @@ const Content = () => {
             <p>15</p>
           </div>
           <div className="absolute left-[50%] -translate-x-[50%] top-[7.4rem]">
-            <button className="bg-white fill-current rounded-full ">
+            <button className="bg-white rounded-full ">
               <img src="/img/play.png" alt="play-button" />
             </button>
           </div>
