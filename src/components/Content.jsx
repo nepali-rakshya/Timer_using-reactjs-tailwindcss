@@ -2,13 +2,22 @@ import React from "react";
 import { useState } from "react";
 
 const Content = () => {
+  const [button, setButton] = useState({ condition: true });
   const [sec, setSec] = useState(0);
   const [min, setMin] = useState(0);
   const [hour, setHour] = useState(0);
   const [day, setDay] = useState(0);
 
-  const handleClick = (e) => {
-    console.log("button" + e.target);
+  const handleClick = () => {
+    setButton((prevButton) => {
+      if (prevButton.condition === true) {
+        console.log(prevButton.condition);
+        return { ...prevButton, condition: false };
+      } else if (prevButton.condition === false) {
+        console.log(prevButton.condition);
+        return { ...prevButton, condition: true };
+      }
+    });
   };
 
   return (
@@ -61,20 +70,20 @@ const Content = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#028EC7"
                 stroke="#028EC7"
-                stroke-width="0.6"
+                strokeWidth="0.6"
                 aria-hidden="true"
                 viewBox="0 0 24 24"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
                 />
 
                 <path
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke="#fff"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                   d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
                 />
               </svg>
