@@ -20,6 +20,14 @@ const Content = () => {
     });
   };
 
+  let i = 1;
+  setSec((prevSec) => {
+    while (true) {
+      prevSec + i;
+      i++;
+    }
+  });
+
   return (
     <div className="flex justify-center items-center h-screen font-body tracking-wider">
       <div className="bg-sky-500 w-[35vw] rounded-lg pt-8 px-8 relative ">
