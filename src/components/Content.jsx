@@ -2,31 +2,9 @@ import React from "react";
 import { useState } from "react";
 
 const Content = () => {
-  const [button, setButton] = useState({ condition: true });
-  const [sec, setSec] = useState(0);
-  const [min, setMin] = useState(0);
-  const [hour, setHour] = useState(0);
-  const [day, setDay] = useState(0);
+  const [time, setTime] = useState({ ms: 0, s: 0, h: 0, d: 0 });
 
-  const handleClick = () => {
-    setButton((prevButton) => {
-      if (prevButton.condition === true) {
-        console.log(prevButton.condition);
-        return { ...prevButton, condition: false };
-      } else if (prevButton.condition === false) {
-        console.log(prevButton.condition);
-        return { ...prevButton, condition: true };
-      }
-    });
-  };
-
-  let i = 1;
-  setSec((prevSec) => {
-    while (true) {
-      prevSec + i;
-      i++;
-    }
-  });
+  const handleClick = () => {};
 
   return (
     <div className="flex justify-center items-center h-screen font-body tracking-wider">
